@@ -18,3 +18,17 @@ Archieve/
 # github action result
 semicolon_delimited_script
 .vscode/extensions.json
+
+# Agent Context
+agent.md
+
+# Mac OS
+.DS_Store
+._*
+
+# Additional LaTeX build files
+*.synctex.gz
+*.fdb_latexmk
+*.dvi
+*.bbl
+*.blg
