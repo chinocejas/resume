@@ -7,15 +7,15 @@ and
  [jakegut/resume](https://github.com/jakegut/resume.git).
 
 ### Build using Docker
-using windows cmd
-```sh
-#Build image
+
+**1. Build the image:**
+```bash
 docker build -t mi-latex-image .
-set currentDir=%cd%
+```
 
-
-#Compile tex and convert to PDF and PNG
-docker run --rm -v %currentDir%:/data -w /data mi-latex-image sh -c "pdflatex nicolas_cejas_resume.tex && pdftoppm -png nicolas_cejas_resume.pdf nicolas_cejas_resume"
+**2. Compile PDF & Generate Preview PNG:**
+```bash
+docker run --rm -v "$(pwd)":/data -w /data mi-latex-image sh -c "pdflatex nicolas_cejas_resume.tex && pdftoppm -png -f 1 -l 1 -singlefile nicolas_cejas_resume.pdf nicolas_cejas_resume"
 ```
 
 ### Preview
